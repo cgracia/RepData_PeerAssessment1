@@ -115,7 +115,7 @@ The results are plotted.
 ```{r}
 merged_interval <- merged %>% 
     group_by(interval, weekfactor) %>% 
-    summarise(steps = sum(steps))
+    summarise(steps = mean(steps))
 
 ggplot(merged_interval, aes(interval,steps))+geom_line(color="aquamarine4")+facet_wrap(~weekfactor, nrow=2)
 ```
